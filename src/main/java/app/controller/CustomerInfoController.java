@@ -26,7 +26,7 @@ public class CustomerInfoController {
             int loan_value = jsonObject.getInt("loan_value");
             int period = jsonObject.getInt("period");
             List<Customer> customers = searchService.getCustomersByLoanAndPeriod(loan_value, period);
-            String status = customers.isEmpty() ? "OK" : "NOT OK";
+            String status = !customers.isEmpty() ? "OK" : "NOT OK";
             JSONObject resp = new JSONObject();
             resp.put("Status", status);
             resp.put("Customers", customers);
