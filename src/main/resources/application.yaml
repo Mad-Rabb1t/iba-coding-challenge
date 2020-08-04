@@ -1,0 +1,21 @@
+server:
+  port: ${PORT:8080}
+
+
+spring:
+  datasource:
+    username: ${USERNAME}
+    password: ${PASSWORD}
+    url: ${URL}
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+          paths: /**
+
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
